@@ -108,6 +108,7 @@ let currentTime = 0;
 let isAssetsLoaded = false;
 let startTime;
 let wrongMembers = [];
+let selectedRegionsText = "";
 
 function playS(a) {
 	a.currentTime = 0; a.play().catch(()=>{});
@@ -182,12 +183,26 @@ function startGame(diff) {
     if (limitTimer) clearInterval(limitTimer);
     playS(soundSelect);
     const regions = [];
+    const regionNames = [];
     wrongMembers = [];
     startTime = Date.now();
-    if(document.getElementById('check-jp').checked) regions.push('JP');
-    if(document.getElementById('check-id').checked) regions.push('ID');
-    if(document.getElementById('check-en').checked) regions.push('EN');
-    if(regions.length === 0) return alert("JP,ID,ENを最低1つは選択してください");
+
+    if(document.getElementById('check-jp').checked) {
+        regions.push('JP');
+        regionNames.push('JP');
+    }
+    if(document.getElementById('check-id').checked) {
+        regions.push('ID');
+        regionNames.push('ID');
+    }
+    if(document.getElementById('check-en').checked) {
+        regions.push('EN');
+        regionNames.push('EN');
+    }
+    
+    if(regions.length === 0) return alert("地域を選択してください");
+
+    selectedRegionsText = regionNames.join(', ');
 
     timeLimit = diff === 'EASY' ? 10 : diff === 'NORMAL' ? 5 : 3;
 
@@ -401,7 +416,7 @@ function endQuiz() {
     }
     const diffName = timeLimit === 10 ? "EASY" : timeLimit === 5 ? "NORMAL" : "HARD";
 
-    const shareText = `ホロライブ名前当てクイズ\nMODE: ${diffName}\nランク: ${rank}\n正解率: ${accuracy.toFixed(1)}% (${correctCount}/${totalQ})\nタイム: ${timeString}\n#ホロライブ名前当てクイズ\nhttps://holo-name-quiz.pages.dev/`;
+    const shareText = `ホロライブ名前当てクイズ\nMODE: ${diffName}\n選択問題: ${selectedRegionsText}\nランク: ${rank}\n正解率: ${accuracy.toFixed(1)}% (${correctCount}/${totalQ})\nタイム: ${timeString}\n#ホロライブ名前当てクイズ\nhttps://holo-name-quiz.pages.dev/`;
     const shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText);
 
     let reviewHtml = "";
