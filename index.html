@@ -25,10 +25,17 @@
         <main>
             <div id="start-screen" class="screen active">
                 <h1>ホロライブ名前当てクイズ</h1>
+
                 <div class="region-select-area">
-                    <label><input type="checkbox" id="check-jp" checked> JP</label>
-                    <label><input type="checkbox" id="check-id" checked> ID</label>
-                    <label><input type="checkbox" id="check-en" checked> EN</label>
+                    <label>
+                        <input type="checkbox" id="check-jp" checked onchange="playS(soundSelect)"> JP
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-id" onchange="playS(soundSelect)"> ID
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-en" onchange="playS(soundSelect)"> EN
+                    </label>
                 </div>
                 <div class="button-group">
                     <button class="diff-btn btn-easy" onclick="startGame('EASY')">EASY (制限時間10秒)</button>
