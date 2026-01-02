@@ -385,24 +385,24 @@ function endQuiz() {
         if (elapsed <= totalQ * 3) {
             rank = "SSS";
             rankColor = "#ff0000";
-            message = "驚異的な判断速度！あなたは伝説のホロリスです！";
+            message = "素晴らしい判断速度です！ホロライブ愛を感じます！";
         } else if (elapsed <= totalQ * 5) {
             rank = "SS";
             rankColor = "#ff8c00";
-            message = "素晴らしい！全メンバーを完璧に、かつ素早く把握していますね！";
+            message = "良い判断速度です！次はSSSランクを目指してみてください！";
         } else {
             rank = "S";
             rankColor = "#ffbc00";
-            message = "ノーミスクリア！ホロライブ愛が伝わってきます！";
+            message = "ノーミスクリア！全メンバーを完璧に把握していますね！";
         }
     } else if (accuracy >= 75) {
         rank = "A";
         rankColor = "#28a745";
-        message = "かなりの高スコアです！次はノーミスクリアを目指しましょう！";
+        message = "なかなかのスコアです！次はノーミスクリアを目指してみてください！";
     } else if (accuracy >= 50) {
         rank = "B";
         rankColor = "#007bff";
-        message = "安定感がありますね。もっとたくさんの配信を見てみましょう！";
+        message = "安定感がありますね！さらに高いスコアを目指してみましょう！";
     }
 
     let diffColor = "#28a745"; // EASY
