@@ -6,6 +6,8 @@
         <title>ホロライブ名前当てクイズ</title>
         <meta name="description" content="ホロライブメンバーの名前を当てるクイズゲームです。あなたのホロライブ知識をテストしよう。">
         <meta name="keywords" content="ホロライブ,hololive,クイズ,名前当て,VTuber">
+        <meta name="author" content="arusia">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -33,6 +35,12 @@
                     <button class="diff-btn btn-normal" onclick="startGame('NORMAL')">NORMAL (制限時間5秒)</button>
                     <button class="diff-btn btn-hard" onclick="startGame('HARD')">HARD (制限時間3秒)</button>
                 </div>
+
+                <div class="audio-notice" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                    <span class="material-icons" style="font-size: 1.2rem;">volume_up</span>
+                    <span>音が出ますのでご注意ください</span>
+                </div>
+
                 <div class="footer-buttons">
                     <button class="small-btn" onclick="showAbout()">このゲームについて</button>
                     <button class="small-btn" onclick="openTwitter()">制作：arusia(@milfeulle)</button>
