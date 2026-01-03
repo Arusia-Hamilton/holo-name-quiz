@@ -495,6 +495,11 @@ function openTwitter() {
     window.open(twitterUrl, '_blank');
 }
 
+function openGameList() {
+    const twitterUrl = "https://arusia.pages.dev/";
+    window.open(twitterUrl, '_blank');
+}
+
 function showAbout() {
     const title = "このゲームについて";
     const body = `<p>ホロライブメンバーの画像を見て、そのメンバーの名前を当てるクイズです。</p><br>
