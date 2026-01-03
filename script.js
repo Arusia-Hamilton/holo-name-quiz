@@ -70,36 +70,36 @@
     { id: "Kaela-Kovalskia", name: "Kaela Kovalskia", disp: "カエラ・コヴァルスキア", region: "ID", unit: "3期生" },
     { id: "Kobo-Kanaeru", name: "Kobo Kanaeru", disp: "こぼ・かなえる", region: "ID", unit: "3期生" },
 
-    { id: "Mori-Calliope", name: "Mori Calliope", disp: "<ruby>森<rt>モリ</rt><ruby>カリオペ", region: "EN", unit: "-Myth-" },
-    { id: "Takanashi-Kiara", name: "Takanashi Kiara", disp: "<ruby>小鳥遊<rt>タカナシ</rt></ruby>キアラ", region: "EN", unit: "-Myth-" },
-    { id: "Ninomae-Inanis", name: "Ninomae Ina'nis", disp: "<ruby>一<rt>ニノマエ</rt></ruby><ruby>伊那尓栖<rt>イナニス</rt></ruby>", region: "EN", unit: "-Myth-" },
-    { id: "Watson-Amelia", name: "Watson Amelia", disp: "ワトソン・アメリア", region: "EN", unit: "-Myth-" },
-    { id: "Gawr-Gura", name: "Gawr Gura", disp: "がうる・ぐら", region: "EN", unit: "-Myth-" },
+    { id: "Mori-Calliope", name: "Mori Calliope", disp: "<ruby>森<rt>モリ</rt><ruby>カリオペ", region: "EN", unit: "Myth" },
+    { id: "Takanashi-Kiara", name: "Takanashi Kiara", disp: "<ruby>小鳥遊<rt>タカナシ</rt></ruby>キアラ", region: "EN", unit: "Myth" },
+    { id: "Ninomae-Inanis", name: "Ninomae Ina'nis", disp: "<ruby>一<rt>ニノマエ</rt></ruby><ruby>伊那尓栖<rt>イナニス</rt></ruby>", region: "EN", unit: "Myth" },
+    { id: "Watson-Amelia", name: "Watson Amelia", disp: "ワトソン・アメリア", region: "EN", unit: "Myth" },
+    { id: "Gawr-Gura", name: "Gawr Gura", disp: "がうる・ぐら", region: "EN", unit: "Myth" },
 
-    { id: "IRyS", name: "IRyS", disp: "アイリス", region: "EN", unit: "-Promise-" },
-    { id: "Ouro-Kronii", name: "Ouro Kronii", disp: "オーロ・クロニー", region: "EN", unit: "-Promise-" },
-    { id: "Hakos-Baelz", name: "Hakos Baelz", disp: "ハコス・ベールズ", region: "EN", unit: "-Promise-" },
-    { id: "Ceres-Fauna", name: "Ceres Fauna", disp: "セレス・ファウナ", region: "EN", unit: "-Promise-" },
-    { id: "Nanashi-Mumei", name: "Nanashi Mumei", disp: "<ruby>七詩<rt>ナナシ</rt></ruby>ムメイ", region: "EN", unit: "-Promise-" },
+    { id: "Tsukumo-Sana", name: "Tsukumo Sana", disp: "<ruby>九十九<rt>ツクモ</rt></ruby><ruby>佐命<rt>サナ</rt></ruby>", region: "EN", unit: "Council" },
 
-    { id: "Shiori-Novella", name: "Shiori Novella", disp: "シオリ・ノヴェラ", region: "EN", unit: "-Advent-" },
-    { id: "Koseki-Bijou", name: "Koseki Bijou", disp: "<ruby>古石<rt>コセキ</rt></ruby>ビジュー", region: "EN", unit: "-Advent-" },
-    { id: "Nerissa-Ravencroft", name: "Nerissa Ravencroft", disp: "ネリッサ・レイヴンクロフト", region: "EN", unit: "-Advent-" },
-    { id: "Fuwawa-Abyssgard", name: "Fuwawa Abyssgard", disp: "フワワ・アビスガード", region: "EN", unit: "-Advent-" },
-    { id: "Mococo-Abyssgard", name: "Mococo Abyssgard", disp: "モココ・アビスガード", region: "EN", unit: "-Advent-" },
+    { id: "IRyS", name: "IRyS", disp: "アイリス", region: "EN", unit: "Promise" },
+    { id: "Ouro-Kronii", name: "Ouro Kronii", disp: "オーロ・クロニー", region: "EN", unit: "Promise" },
+    { id: "Hakos-Baelz", name: "Hakos Baelz", disp: "ハコス・ベールズ", region: "EN", unit: "Promise" },
+    { id: "Ceres-Fauna", name: "Ceres Fauna", disp: "セレス・ファウナ", region: "EN", unit: "Promise" },
+    { id: "Nanashi-Mumei", name: "Nanashi Mumei", disp: "<ruby>七詩<rt>ナナシ</rt></ruby>ムメイ", region: "EN", unit: "Promise" },
 
-    { id: "Elizabeth-Rose-Bloodflame", name: "Elizabeth Rose Bloodflame", disp: "エリザベス・ローズ・ブラッドフレイム", region: "EN", unit: "-Justice-" },
-    { id: "Gigi-Murin", name: "Gigi Murin", disp: "ジジ・ムリン", region: "EN", unit: "-Justice-" },
-    { id: "Cecilia-Immergreen", name: "Cecilia Immergreen", disp: "セシリア・イマーグリーン", region: "EN", unit: "-Justice-" },
-    { id: "Raora-Panthera", name: "Raora Panthera", disp: "ラオーラ・パンテーラ", region: "EN", unit: "-Justice-" },
+    { id: "Shiori-Novella", name: "Shiori Novella", disp: "シオリ・ノヴェラ", region: "EN", unit: "Advent" },
+    { id: "Koseki-Bijou", name: "Koseki Bijou", disp: "<ruby>古石<rt>コセキ</rt></ruby>ビジュー", region: "EN", unit: "Advent" },
+    { id: "Nerissa-Ravencroft", name: "Nerissa Ravencroft", disp: "ネリッサ・レイヴンクロフト", region: "EN", unit: "Advent" },
+    { id: "Fuwawa-Abyssgard", name: "Fuwawa Abyssgard", disp: "フワワ・アビスガード", region: "EN", unit: "Advent" },
+    { id: "Mococo-Abyssgard", name: "Mococo Abyssgard", disp: "モココ・アビスガード", region: "EN", unit: "Advent" },
 
-    { id: "Tsukumo-Sana", name: "Tsukumo Sana", disp: "<ruby>九十九<rt>ツクモ</rt></ruby><ruby>佐命<rt>サナ</rt></ruby>", region: "EN", unit: "-Council-" }
+    { id: "Elizabeth-Rose-Bloodflame", name: "Elizabeth Rose Bloodflame", disp: "エリザベス・ローズ・ブラッドフレイム", region: "EN", unit: "Justice" },
+    { id: "Gigi-Murin", name: "Gigi Murin", disp: "ジジ・ムリン", region: "EN", unit: "Justice" },
+    { id: "Cecilia-Immergreen", name: "Cecilia Immergreen", disp: "セシリア・イマーグリーン", region: "EN", unit: "Justice" },
+    { id: "Raora-Panthera", name: "Raora Panthera", disp: "ラオーラ・パンテーラ", region: "EN", unit: "Justice" }
 ];
 
 const unitOrder = {
     "JP": ["0期生", "1期生", "2期生", "ゲーマーズ", "3期生", "4期生", "5期生", "秘密結社holoX", "ReGLOSS", "FLOW GLOW"],
     "ID": ["1期生", "2期生", "3期生"],
-    "EN": ["-Myth-", "-Promise-", "-Advent-", "-Justice-", "-Council-"]
+    "EN": ["Myth", "Council", "Promise", "Advent", "Justice"]
 };
 
 let quizPool = [], currentIdx = 0, correctCount = 0, timeLimit = 5, limitTimer = null, currentRegion = "JP", currentUnit = null, isAnswering = false;
