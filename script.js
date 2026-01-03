@@ -182,45 +182,44 @@ function hideLoading() {
 function startGame(diff) {
     if (limitTimer) clearInterval(limitTimer);
     playS(soundSelect);
+    
     const regions = [];
     const regionNames = [];
     wrongMembers = [];
     startTime = Date.now();
 
-    if(document.getElementById('check-jp').checked) {
-        regions.push('JP');
-        regionNames.push('JP');
-    }
-    if(document.getElementById('check-id').checked) {
-        regions.push('ID');
-        regionNames.push('ID');
-    }
-    if(document.getElementById('check-en').checked) {
-        regions.push('EN');
-        regionNames.push('EN');
-    }
+    // 1. 各地域をチェック
+    if(document.getElementById('check-jp').checked) { regions.push('JP'); regionNames.push('JP'); }
+    if(document.getElementById('check-id').checked) { regions.push('ID'); regionNames.push('ID'); }
+    if(document.getElementById('check-en').checked) { regions.push('EN'); regionNames.push('EN'); }
     
     if(regions.length === 0) return alert("地域を選択してください");
 
+    // タブの状態を更新
+    const allRegions = ['JP', 'ID', 'EN'];
+    allRegions.forEach(reg => {
+        const tabEl = document.getElementById(`tab-${reg}`);
+        if (tabEl) {
+            if (regions.includes(reg)) {
+                tabEl.classList.remove('disabled');
+            } else {
+                tabEl.classList.add('disabled');
+            }
+        }
+    });
+
+    changeTab(regions[0]);
+
     selectedRegionsText = regionNames.join(', ');
 
+    // --- 以下、既存の処理 ---
     timeLimit = diff === 'EASY' ? 10 : diff === 'NORMAL' ? 5 : 3;
 
+    // データのフィルタリング（重複排除は Set を使ってスマートに）
     const filteredData = holomemData.filter(m => regions.includes(m.region));
-    
-    const uniqueData = [];
-    const seenIds = new Set();
-    
-    for (const member of filteredData) {
-        if (!seenIds.has(member.id)) {
-            seenIds.add(member.id);
-            uniqueData.push(member);
-        }
-    }
+    const uniqueData = Array.from(new Map(filteredData.map(m => [m.id, m])).values());
 
     quizPool = uniqueData.sort(() => Math.random() - 0.5);
-
-    changeTab('JP');
 
     currentIdx = 0; 
     correctCount = 0;
@@ -303,7 +302,8 @@ function renderButtons() {
         });
     } else {
         const back = document.createElement('div');
-        back.className = "option-btn"; back.innerText = "戻る"; back.style.background = "#eee";
+        back.className = "option-btn btn-back";
+        back.innerText = "戻る";
         back.onclick = () => { currentUnit = null; renderButtons(); };
         container.appendChild(back);
         holomemData.filter(m => m.region === currentRegion && m.unit === currentUnit).forEach(m => {

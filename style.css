@@ -91,10 +91,66 @@ main {
 
 /* タブとボタン */
 .region-tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 15px; }
-.tab { flex: 1; padding: 10px; cursor: pointer; color: #999; font-weight: bold; text-align: center; }
-.tab.active { color: var(--accent); border-bottom: 3px solid var(--accent); }
+.tab { 
+    flex: 1; 
+    padding: 10px; 
+    cursor: pointer; 
+    color: #888; 
+    font-weight: bold; 
+    text-align: center; 
+    background-color: #f9f9f9;
+    border-right: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+.tab:last-child {
+    border-right: none;
+}
+.tab:not(.disabled):not(.active):hover {
+    background-color: #f0f0f0;
+}
+.tab.active { 
+    color: white;
+    background-color: var(--accent);
+    border-bottom: none;
+}
+.tab.disabled { 
+    background-color: #ebebeb;
+    color: #bbb; 
+    cursor: not-allowed; 
+    pointer-events: none; 
+}
 .options-grid { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, 70px); gap: 8px; width: 100%; }
-.option-btn { background: white; border: 1px solid #ddd; border-radius: 8px; font-size: 0.65rem; cursor: pointer; font-weight: bold; display: flex; justify-content: center; align-items: center; padding: 2px; text-align: center; overflow-wrap: anywhere; }
+.option-btn { 
+    background: white; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    font-size: 0.65rem; 
+    cursor: pointer; 
+    font-weight: bold; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 2px; 
+    text-align: center; 
+    overflow-wrap: anywhere; 
+    transition: all 0.2s; 
+}
+
+.option-btn:hover {
+    background-color: #f0faff;
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.option-btn[style*="background: rgb(238, 238, 238)"]:hover {
+    background-color: #ddd !important;
+    color: #333 !important;
+}
+
+.btn-back { background-color: #eee; }
+.btn-back:hover { background-color: #ddd !important; border-color: #bbb !important; color: #333 !important; }
 
 /* 進捗 */
 #quiz-progress-container { margin-top: 20px; text-align: left; }
