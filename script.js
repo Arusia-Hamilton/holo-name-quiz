@@ -107,8 +107,10 @@ const soundSelect = new Audio('sounds/select.mp3'), soundCorrect = new Audio('so
 let currentTime = 0;
 let isAssetsLoaded = false;
 let startTime;
+let timerInt; // ゲーム全体の計測用
 let wrongMembers = [];
 let selectedRegionsText = "";
+let nextStageTimeout;
 
 function playS(a) {
 	a.currentTime = 0; a.play().catch(()=>{});
@@ -181,12 +183,14 @@ function hideLoading() {
 // ゲームスタート
 function startGame(diff) {
     if (limitTimer) clearInterval(limitTimer);
+    if (timerInt) clearInterval(timerInt);
     playS(soundSelect);
     
     const regions = [];
     const regionNames = [];
     wrongMembers = [];
     startTime = Date.now();
+    timerInt = setInterval(updateTimer, 1000);
 
     // 1. 各地域をチェック
     if(document.getElementById('check-jp').checked) { regions.push('JP'); regionNames.push('JP'); }
@@ -226,6 +230,19 @@ function startGame(diff) {
     document.getElementById('start-screen').classList.remove('active');
     document.getElementById('quiz-screen').classList.add('active');
     showQuestion();
+}
+
+function updateTimer() {
+    if (!startTime) return;
+
+    const sec = Math.floor((Date.now() - startTime) / 1000);
+    const m = String(Math.floor(sec / 60)).padStart(2, '0');
+    const s = String(sec % 60).padStart(2, '0');
+    
+    const timerEl = document.getElementById('timer');
+    if (timerEl) {
+        timerEl.textContent = `${m}:${s}`;
+    }
 }
 
 function showQuestion() {
@@ -359,15 +376,18 @@ function checkAnswer(name) {
 
     const waitTime = isCorrect ? 1000 : 3000;
 
-    setTimeout(() => { 
-        fb.style.opacity = "0"; 
-        currentIdx++; 
-        showQuestion(); 
-    }, waitTime);
+    if (nextStageTimeout) clearTimeout(nextStageTimeout);
+
+        nextStageTimeout = setTimeout(() => { 
+            fb.style.opacity = "0"; 
+            currentIdx++; 
+            showQuestion(); 
+        }, waitTime);
 }
 
 function endQuiz() {
     if (limitTimer) clearInterval(limitTimer);
+    if (timerInt) clearInterval(timerInt);
     
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
     const m = Math.floor(elapsed / 60);
@@ -529,22 +549,35 @@ function closeModal() {
 }
 
 function backToTitle() {
+    // 1. 全てのタイマーを物理的に止める
     if (limitTimer) {
         clearInterval(limitTimer);
         limitTimer = null;
     }
+    if (timerInt) {
+        clearInterval(timerInt);
+        timerInt = null;
+    }
+    if (nextStageTimeout) {
+        clearTimeout(nextStageTimeout);
+        nextStageTimeout = null;
+    }
 
+    // 2. フラグとデータをリセット
+    isAnswering = false;
     currentIdx = 0;
     correctCount = 0;
-    isAnswering = false;
-    currentTime = 0;
 
-    document.getElementById('feedback').style.opacity = "0";
+    // 3. 表示のリセット
+    const fb = document.getElementById('feedback');
+    fb.style.opacity = "0";
+    fb.innerText = "";
     document.getElementById('ans-space').innerHTML = "";
-    
-    document.getElementById('quiz-screen').classList.remove('active');
-    document.getElementById('start-screen').classList.add('active');
+    const timerEl = document.getElementById('timer');
+    if (timerEl) timerEl.textContent = "00:00";
 
-    const resultScreen = document.getElementById('result-screen');
-    if (resultScreen) resultScreen.classList.remove('active');
+    // 4. 画面切り替え
+    document.getElementById('quiz-screen').classList.remove('active');
+    document.getElementById('result-screen').classList.remove('active');
+    document.getElementById('start-screen').classList.add('active');
 }

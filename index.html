@@ -12,6 +12,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header>
+            <button onclick="backToTitle()">タイトルに戻る</button>
+            <div id="title-text">ホロライブ名前当てクイズ</div>
+            <div id="timer">00:00</div>
+        </header>
+
         <div id="loading-screen">
             <div class="loader-content">
                 <div class="spinner"></div>
@@ -58,7 +64,6 @@
 
             <div id="quiz-screen" class="screen">
                 <div class="quiz-header">
-                    <button class="back-to-title-btn" onclick="backToTitle()">タイトルへ</button>
                     <div class="timer-wrapper">
                         <div id="timer-text">--s</div>
                         <div class="timer-container">
