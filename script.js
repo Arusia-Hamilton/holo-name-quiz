@@ -184,7 +184,6 @@ function hideLoading() {
 function startGame(diff) {
     if (limitTimer) clearInterval(limitTimer);
     if (timerInt) clearInterval(timerInt);
-    playS(soundSelect);
     
     const regions = [];
     const regionNames = [];
@@ -305,6 +304,7 @@ function changeTab(reg) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById('tab-' + reg).classList.add('active');
     renderButtons();
+    playS(soundSelect);
 }
 
 function renderButtons() {
@@ -321,7 +321,7 @@ function renderButtons() {
         const back = document.createElement('div');
         back.className = "option-btn btn-back";
         back.innerText = "戻る";
-        back.onclick = () => { currentUnit = null; renderButtons(); };
+        back.onclick = () => { currentUnit = null; renderButtons(); playS(soundSelect); };
         container.appendChild(back);
         holomemData.filter(m => m.region === currentRegion && m.unit === currentUnit).forEach(m => {
             const btn = document.createElement('div');
@@ -577,6 +577,7 @@ function backToTitle() {
     if (timerEl) timerEl.textContent = "00:00";
 
     // 4. 画面切り替え
+    playS(soundSelect);
     document.getElementById('quiz-screen').classList.remove('active');
     document.getElementById('result-screen').classList.remove('active');
     document.getElementById('start-screen').classList.add('active');
