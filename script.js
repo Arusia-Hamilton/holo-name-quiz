@@ -70,9 +70,9 @@
     { id: "Kaela-Kovalskia", name: "Kaela Kovalskia", disp: "Kaela Kovalskia (カエラ・コヴァルスキア)", region: "ID", unit: "3期生" },
     { id: "Kobo-Kanaeru", name: "Kobo Kanaeru", disp: "Kobo Kanaeru (こぼ・かなえる)", region: "ID", unit: "3期生" },
 
-    { id: "Mori-Calliope", name: "Mori Calliope", disp: "Mori Calliope (<ruby>森<rt>モリ</rt></ruby>カリオペ)", region: "EN", unit: "Myth" },
-    { id: "Takanashi-Kiara", name: "Takanashi Kiara", disp: "Takanashi Kiara (<ruby>小鳥遊<rt>タカナシ</rt></ruby>キアラ)", region: "EN", unit: "Myth" },
-    { id: "Ninomae-Inanis", name: "Ninomae Ina'nis", disp: "Ninomae Ina'nis (<ruby>一<rt>ニノマエ</rt></ruby><ruby>伊那尓栖<rt>イナニス</rt></ruby>)", region: "EN", unit: "Myth" },
+    { id: "Mori-Calliope", name: "Mori Calliope", disp: "Mori Calliope (<ruby>森<rt>もり</rt></ruby>カリオペ)", region: "EN", unit: "Myth" },
+    { id: "Takanashi-Kiara", name: "Takanashi Kiara", disp: "Takanashi Kiara (<ruby>小鳥遊<rt>たかなし</rt></ruby>キアラ)", region: "EN", unit: "Myth" },
+    { id: "Ninomae-Inanis", name: "Ninomae Ina'nis", disp: "Ninomae Ina'nis (<ruby>一<rt>にのまえ</rt></ruby><ruby>伊那尓栖<rt>いなにす</rt></ruby>)", region: "EN", unit: "Myth" },
     { id: "Watson-Amelia", name: "Watson Amelia", disp: "Watson Amelia (ワトソン・アメリア)", region: "EN", unit: "Myth" },
     { id: "Gawr-Gura", name: "Gawr Gura", disp: "Gawr Gura (がうる・ぐら)", region: "EN", unit: "Myth" },
 
@@ -82,10 +82,10 @@
     { id: "Ouro-Kronii", name: "Ouro Kronii", disp: "Ouro Kronii (オーロ・クロニー)", region: "EN", unit: "Promise" },
     { id: "Hakos-Baelz", name: "Hakos Baelz", disp: "Hakos Baelz (ハコス・ベールズ)", region: "EN", unit: "Promise" },
     { id: "Ceres-Fauna", name: "Ceres Fauna", disp: "Ceres Fauna (セレス・ファウナ)", region: "EN", unit: "Promise" },
-    { id: "Nanashi-Mumei", name: "Nanashi Mumei", disp: "Nanashi Mumei (<ruby>七詩<rt>ナナシ</rt></ruby>ムメイ)", region: "EN", unit: "Promise" },
+    { id: "Nanashi-Mumei", name: "Nanashi Mumei", disp: "Nanashi Mumei (<ruby>七詩<rt>ななし</rt></ruby>ムメイ)", region: "EN", unit: "Promise" },
 
     { id: "Shiori-Novella", name: "Shiori Novella", disp: "Shiori Novella (シオリ・ノヴェラ)", region: "EN", unit: "Advent" },
-    { id: "Koseki-Bijou", name: "Koseki Bijou", disp: "Koseki Bijou (<ruby>古石<rt>コセキ</rt></ruby>ビジュー)", region: "EN", unit: "Advent" },
+    { id: "Koseki-Bijou", name: "Koseki Bijou", disp: "Koseki Bijou (<ruby>古石<rt>こせき</rt></ruby>ビジュー)", region: "EN", unit: "Advent" },
     { id: "Nerissa-Ravencroft", name: "Nerissa Ravencroft", disp: "Nerissa Ravencroft (ネリッサ・レイヴンクロフト)", region: "EN", unit: "Advent" },
     { id: "Fuwawa-Abyssgard", name: "Fuwawa Abyssgard", disp: "Fuwawa Abyssgard (フワワ・アビスガード)", region: "EN", unit: "Advent" },
     { id: "Mococo-Abyssgard", name: "Mococo Abyssgard", disp: "Mococo Abyssgard (モココ・アビスガード)", region: "EN", unit: "Advent" },
