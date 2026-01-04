@@ -103,7 +103,7 @@ main {
 .timer-wrapper { flex-grow: 1; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 #timer-text { font-size: 0.8rem; font-weight: bold; color: var(--accent); font-family: monospace; }
 .timer-container { width: 100%; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
-#time-limit-bar { height: 100%; width: 100%; background: var(--accent); transition: width 0.1s linear; }
+#timer-bar { width: 100%; height: 100%; background-color: #ffce54; transition: width 0.1s linear; }
 
 /* 正答表示・画像 */
 #ans-space { height: 85px; margin-bottom: 10px; background: #fffafa; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px; border: 1px solid #ffebeb; font-weight: bold; }
