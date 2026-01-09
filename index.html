@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ホロライブ名前当てクイズ</title>
+        <meta name="description" content="ホロライブメンバーの名前を当てるクイズゲームです。あなたのホロライブ知識をテストしよう。">
+        <meta name="keywords" content="ホロライブ,hololive,クイズ,名前当て,VTuber">
+        <meta name="author" content="arusia">
+        <link rel="icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <button onclick="backToTitle()">タイトルに戻る</button>
+            <div id="title-text">ホロライブ名前当てクイズ</div>
+            <div id="timer">00:00</div>
+        </header>
+
+        <div id="loading-screen">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <p>メンバーデータを読み込み中...</p>
+                <div class="load-bar-container">
+                    <div id="load-bar"></div>
+                </div>
+                <div id="load-text">0%</div>
+            </div>
+        </div>
+
+        <main>
+            <div id="start-screen" class="screen active">
+                <h1>ホロライブ名前当てクイズ</h1>
+
+                <div class="region-select-area">
+                    <div class="selection-title">出題範囲選択</div>
+    
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="check-jp" checked onchange="playS(soundSelect)"> JP
+                        </label>
+                        <label>
+                            <input type="checkbox" id="check-dev_is" checked onchange="playS(soundSelect)"> DEV_IS
+                        </label>
+                        <label>
+                            <input type="checkbox" id="check-id" onchange="playS(soundSelect)"> ID
+                        </label>
+                        <label>
+                            <input type="checkbox" id="check-en" onchange="playS(soundSelect)"> EN
+                        </label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="diff-btn btn-easy" onclick="startGame('EASY')">EASY (制限時間10秒)</button>
+                    <button class="diff-btn btn-normal" onclick="startGame('NORMAL')">NORMAL (制限時間5秒)</button>
+                    <button class="diff-btn btn-hard" onclick="startGame('HARD')">HARD (制限時間3秒)</button>
+                </div>
+
+                <div class="audio-notice" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                    <span class="material-icons" style="font-size: 1.2rem;">volume_up</span>
+                    <span>音が出ますのでご注意ください</span>
+                </div>
+
+                <div class="footer-buttons">
+                    <button class="small-btn" onclick="showAbout()">このゲームについて</button>
+                    <button class="small-btn" onclick="openGameList()">ゲーム一覧</button>
+                    <button class="small-btn" onclick="openTwitter()">制作：arusia(@milfeulle)</button>
+                </div>
+            </div>
+
+            <div id="quiz-screen" class="screen">
+                <div class="quiz-header">
+                    <div class="timer-wrapper">
+                        <div id="timer-text">--s</div>
+                        <div class="timer-container">
+                            <div id="timer-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ans-space"></div>
+                <div id="image-container"><img id="member-img" src=""></div>
+                <div class="spacer-10"></div>
+                <div class="region-tabs" id="region-tabs">
+                    <div class="tab" id="tab-JP" onclick="changeTab('JP')">JP</div>
+                    <div class="tab" id="tab-DEV_IS" onclick="changeTab('DEV_IS')">DEV_IS</div>
+                    <div class="tab" id="tab-ID" onclick="changeTab('ID')">ID</div>
+                    <div class="tab" id="tab-EN" onclick="changeTab('EN')">EN</div>
+                </div>
+                <div id="options-container" class="options-grid"></div>
+                <div id="quiz-progress-container">
+                    <progress id="quiz-progress" value="0" max="100"></progress>
+                    <div id="progress-text">1 / -- 問目</div>
+                </div>
+            </div>
+
+            <div id="result-screen" class="screen">
+                </div>
+
+            <div id="feedback"></div>
+
+            <div id="modal-overlay" onclick="closeModal()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:2000; justify-content:center; align-items:center;">
+                <div id="modal-content" onclick="event.stopPropagation()" 
+                     style="background:white; padding:25px; border-radius:15px; width:95%; max-width:600px; position:relative; text-align:center;">
+
+                    <h2 id="modal-title" style="margin-bottom:15px; font-size:1.2rem;"></h2>
+                    <div id="modal-body" style="text-align:left; font-size:0.9rem; line-height:1.6; color:#444; max-height:400px; overflow-y:auto;"></div>
+
+                    <button onclick="closeModal()" style="margin-top:20px; width:100%; padding:10px; border:none; border-radius:8px; background:#eee; cursor:pointer; font-weight:bold;">閉じる</button>
+                </div>
+            </div>
+
+        </main>
+
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
+    </body>
+</html>
